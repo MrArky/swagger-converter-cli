@@ -38,7 +38,7 @@ module.exports = {
     plugins: [
         // 暂时用不到
     ],
-    mode: 'development',
+    mode: 'production',
     target: 'node',
     resolve: {
         extensions: ['.ts', '.js']

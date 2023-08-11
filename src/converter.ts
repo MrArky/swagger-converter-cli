@@ -5,7 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import { compile } from 'json-schema-to-typescript';
 import { JSONSchema4 } from './data';
-import { stringFormat, transParamsAndResToTs } from './utils';
+import { getStringHash, stringFormat, transParamsAndResToTs } from './utils';
 import { pinyin } from 'pinyin-pro';
 
 /**
@@ -112,7 +112,6 @@ ${configJson.serviceDepts}
                                         } as any);
                                     }
                                     let url = path;
-                                    let params = `$data?:{0},$queryString?:{ {1}}`;
                                     /* 处理参数 ,参数的位置可能是在path、body、query */
 
                                     //#region 处理 path 参数
@@ -137,7 +136,7 @@ ${configJson.serviceDepts}
                                         json.paths[path][rest].summary, // 描述
                                         pathParamsDesc ? '\n' + pathParamsDesc : '', // path 参数描述
                                         path.replace(/\/\{([\s\S]*)\}/, '') // 去掉参数
-                                            .split('/').slice(-1)[0] + pathName + rest[0].toUpperCase() + rest.slice(1).toLowerCase(), // service 函数名称
+                                            .split('/').slice(-1)[0] + pathName + getStringHash(path).toString().replace('-', '$') + rest[0].toUpperCase() + rest.slice(1).toLowerCase(), // service 函数名称
                                         pathQuery?.join('') ?? '', // path 参数
                                         await transParamsAndResToTs(json.paths[path][rest].parameters?.find(c => c.in === 'body')?.schema), // body 参数
                                         `{ ${queryStringObjQuery} }`, // url 参数
