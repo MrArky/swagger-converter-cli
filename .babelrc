@@ -1,0 +1,6 @@
+{
+    "presets": [
+        "@babel/preset-env", // 解析 ES6+ 高级语法
+        "@babel/preset-typescript" // 解析 typescript 语法
+    ]
+}
