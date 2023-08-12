@@ -33,7 +33,7 @@ npx swagger-converter-init
     "createDir": "./service"
 }
 ```
-- hostname：json请求host地址
+- hostname：json请求host地址（目前仅支持 https 协议，后期会扩展 http 协议）
 - port：请求端口
 - path：请求路由
 - method：请求方式
