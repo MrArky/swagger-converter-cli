@@ -1,4 +1,4 @@
-# swagger-converter-ts
+# swagger-converter-cli
 ### 📖 介绍
 用于将 Swagger 的 json对象转为 ts 文件定义
 ### 🔨 安装
