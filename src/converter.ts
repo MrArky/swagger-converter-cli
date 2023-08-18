@@ -157,12 +157,12 @@ ${configJson.serviceDepts}
                         };
                         // 将 schemes 对象解析成 ts 对象
                         compile(apiObj, 'APIOBJ', {
-                            unknownAny: false,
+                            // unknownAny: false,
                             bannerComment: `/**
 * 这个文件是通过 swagger-converter-ts 自动生成的。不要手工修改它。相反，修改源JSONSchema文件\n* 并运行 npx swagger-converter-ts 来重新生成该文件。
 */`
                         }).then(ts => {
-                            fs.appendFile(configJson.createDir + `/data.d.ts`, ts.replace(/\[k: string\]: any;/g, ''), function (err) {
+                            fs.appendFile(configJson.createDir + `/data.d.ts`, ts.replace(/\[k: string\]: unknown;/g, ''), function (err) {
                                 if (err) console.log(`\x1B[31mAPIOBJ write failure\x1B[0m`, err);
                                 else console.log(`\x1B[32mAPIOBJ write successed\x1B[0m`);
                             });
