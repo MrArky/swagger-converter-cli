@@ -56,3 +56,21 @@ npx swagger-converter-init
 ``` txt
 npx swagger-converter-ts
 ```
+#### 注意事项
+可能在执行 `npx swagger-converter-ts` 出现 `prettier` 相关问题，需要在 `node_modules` 中删除 `prettier` 相关的包文件即可。
+``` txt
+Error: Cannot find module 'D:\XXX\XXX\XXX\node_modules\prettier-plugin-organize-imports\index.js'
+    at t (D:\Arky\project\qllrh\node_modules\swagger-converter-cli\commands\converter.js:66:1834263)
+    at D:\Arky\project\qllrh\node_modules\swagger-converter-cli\commands\converter.js:24:622393
+    at Array.map (<anonymous>)
+    at Object.<anonymous> (D:\Arky\project\qllrh\node_modules\swagger-converter-cli\commands\converter.js:24:622350)
+    at Object.loadPlugins (D:\Arky\project\qllrh\node_modules\swagger-converter-cli\commands\converter.js:24:226859)
+    at D:\Arky\project\qllrh\node_modules\swagger-converter-cli\commands\converter.js:24:622962
+    at t.format (D:\Arky\project\qllrh\node_modules\swagger-converter-cli\commands\converter.js:3:365107)
+    at t.format (D:\Arky\project\qllrh\node_modules\swagger-converter-cli\commands\converter.js:3:365107)
+    at D:\Arky\project\qllrh\node_modules\swagger-converter-cli\commands\converter.js:3:373978
+    at D:\Arky\project\qllrh\node_modules\swagger-converter-cli\commands\converter.js:3:372450 {
+  code: 'MODULE_NOT_FOUND'
+}
+```
+这时删除 `node_modules` 中 `prettier-plugin-organize-imports` 文件夹。
