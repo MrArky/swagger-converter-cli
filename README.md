@@ -1,6 +1,6 @@
 # swagger-converter-cli
 ### 📖 介绍
-用于将 Swagger 的 json对象转为 ts 文件定义
+用于将 Swagger 的 json 对象转为 ts 文件定义
 ### 🔨 安装
 ``` txt
 npm install swagger-converter-cli
@@ -33,7 +33,8 @@ npx swagger-converter-init
     "createDir": "./service"
 }
 ```
-- hostname：json请求host地址（目前仅支持 https 协议，后期会扩展 http 协议）
+- protocol: 支持 `https` 和 `http`，非必选项，默认值 `https`
+- hostname：json 请求 host 地址
 - port：请求端口
 - path：请求路由
 - method：请求方式

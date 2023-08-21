@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import https from 'https';
+import http from 'http';
 import fs from 'fs';
 import path from 'path';
 import { compile } from 'json-schema-to-typescript';
@@ -12,6 +13,7 @@ import { pinyin } from 'pinyin-pro';
  * 用户自定义配置的类型
  */
 declare type userInitJsonType = {
+    protocol?: 'https' | 'http';
     hostname?: string;
     port?: number;
     path?: string;
@@ -74,7 +76,7 @@ fs.readFile('./swagger-converter.json', 'utf-8', function (error, data) {
     /**
      * 请求 Swagger 的 json
      */
-    const req = https.request(options, res => {
+    const req = (configJson.protocol === 'http' ? http : https).request(options, res => {
         try {
             let data = '';
             res.on('data', d => data += d);
