@@ -19,7 +19,7 @@
     "swagger-converter-ts": "./commands/converter.js"
   },
   "keywords": [],
-  "author": "张琪 <mail:847566755@qq.com>",
+  "author": "张琪 <mail:847566733@qq.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.22.9",
