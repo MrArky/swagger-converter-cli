@@ -18,6 +18,10 @@
     "swagger-converter-init": "./commands/init.js",
     "swagger-converter-ts": "./commands/converter.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrArky/swagger-converter-cli.git"
+  },
   "keywords": [],
   "author": "张琪 <mail:847566733@qq.com>",
   "license": "ISC",

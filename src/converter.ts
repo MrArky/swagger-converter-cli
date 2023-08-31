@@ -64,6 +64,7 @@ fs.readFile('./swagger-converter.json', 'utf-8', function (error, data) {
             port: configJson.port,
             path: configJson.path,
             method: configJson.method,
+            headers: { 'content-type': 'text/html;charset=utf-8' }
         };
         if (!configJson.serviceDepts || !configJson.template || !configJson.createDir) throw Error();
     }
@@ -79,6 +80,7 @@ fs.readFile('./swagger-converter.json', 'utf-8', function (error, data) {
     const req = (configJson.protocol === 'http' ? http : https).request(options, res => {
         try {
             let data = '';
+            res.setEncoding('utf8');
             res.on('data', d => data += d);
             res.on('end', () => {
                 deleteDir(configJson.createDir);
