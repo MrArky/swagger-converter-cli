@@ -163,7 +163,7 @@ ${configJson.serviceDepts}
                         compile(apiObj, 'APIOBJ', {
                             // unknownAny: false,
                             bannerComment: `/**
-* 这个文件是通过 swagger-converter-ts 自动生成的。不要手工修改它。相反，修改源JSONSchema文件\n* 并运行 npx swagger-converter-ts 来重新生成该文件。
+* 这个文件是通过 swagger-converter-ts 自动生成的。不要手工修改它。相反，修改源 JSONSchema 文件\n* 并运行 npx swagger-converter-ts 来重新生成该文件。
 */`
                         }).then(ts => {
                             fs.appendFile(configJson.createDir + `/data.d.ts`, ts.replace(/\[k: string\]: unknown;/g, ''), function (err) {
