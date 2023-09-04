@@ -102,12 +102,10 @@ fs.readFile('./swagger-converter.json', 'utf-8', function (error, data) {
 *
 * 这个文件是通过 swagger-converter-ts 自动生成的。不要手工修改它。相反，修改源 JSONSchema 文件
 * 并运行 npx swagger-converter-ts 来重新生成该文件。
-* qs 是我们强依赖的一个包，如果项目中没有引用，或许在需要安装它： npm i qs --save
 *
 ----------------------------------------------------------------------------------------*/
 
 import { APIOBJ } from './data';
-import { stringify } from "qs";
 ${configJson.serviceDepts}
 
                                     `, function (err) {
