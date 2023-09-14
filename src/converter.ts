@@ -130,7 +130,7 @@ ${configJson.serviceDepts}
                                     //#region 处理 path 参数
                                     let queryStringObj = json.paths[path][rest].parameters?.filter(c => c.in === 'query');
                                     let queryStringObjQuery = queryStringObj?.map(c => {
-                                        return `$${c.name}: ${c.type === 'integer' ? 'number' : 'string'}; `
+                                        return `${c.name}: ${c.type === 'integer' ? 'number' : 'string'}; `
                                     })?.join('') ?? '';
                                     //#endregion
                                     let pathParamsDesc = pathQueryObj?.map(c => `* @param $${c.name} ${c.description ?? '参数'}`).join('\n') ?? '';
