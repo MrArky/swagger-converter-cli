@@ -1,6 +1,6 @@
 {
   "name": "swagger-converter-cli",
-  "version": "1.1.1",
+  "version": "1.1.4",
   "description": "用于 Swagger 转换成前端相关定义，便于调用",
   "main": "index.js",
   "files": [
