@@ -1,6 +1,6 @@
 {
   "name": "swagger-converter-cli",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "用于 Swagger 转换成前端相关定义，便于调用",
   "main": "index.js",
   "files": [
@@ -36,7 +36,5 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "json-schema-to-typescript": "^13.0.2",
-    "pinyin-pro": "^3.16.2"
   }
 }
